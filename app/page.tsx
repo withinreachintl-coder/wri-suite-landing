@@ -98,10 +98,10 @@ export default function Home() {
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
-            {/* Basic */}
+            {/* Starter */}
             <div style={{ background: '#FAFAF9', border: '2px solid #E5E0D8', borderRadius: '12px', padding: '40px 32px' }}>
               <h3 style={{ fontFamily: 'var(--font-playfair)', fontSize: '24px', fontWeight: 600, color: '#1C1917', marginBottom: '12px' }}>
-                Basic
+                Starter
               </h3>
               <p style={{ fontFamily: 'var(--font-dmsans)', fontSize: '13px', color: '#6B5B4E', marginBottom: '32px' }}>
                 Get started with daily operations
@@ -109,7 +109,7 @@ export default function Home() {
 
               <div style={{ background: '#FFFFFF', borderRadius: '8px', padding: '20px', marginBottom: '32px', textAlign: 'center' }}>
                 <p style={{ fontFamily: 'var(--font-playfair)', fontSize: '32px', fontWeight: 600, color: '#D97706', margin: 0 }}>
-                  $9<span style={{ fontSize: '18px', fontWeight: 400 }}>/mo</span>
+                  $19<span style={{ fontSize: '18px', fontWeight: 400 }}>/mo</span>
                 </p>
                 <p style={{ fontFamily: 'var(--font-dmsans)', fontSize: '12px', color: '#6B5B4E', marginTop: '8px' }}>
                   14-day free trial
@@ -131,7 +131,7 @@ export default function Home() {
                 </li>
               </ul>
 
-              <a href="https://buy.stripe.com/test_PLACEHOLDER_BASIC" style={{
+              <a href="https://buy.stripe.com/test_PLACEHOLDER_STARTER" style={{
                 display: 'block',
                 fontFamily: 'var(--font-dmsans)',
                 fontSize: '14px',
@@ -164,7 +164,7 @@ export default function Home() {
 
               <div style={{ background: '#FFFFFF', borderRadius: '8px', padding: '20px', marginBottom: '32px', textAlign: 'center' }}>
                 <p style={{ fontFamily: 'var(--font-playfair)', fontSize: '32px', fontWeight: 600, color: '#D97706', margin: 0 }}>
-                  $29<span style={{ fontSize: '18px', fontWeight: 400 }}>/mo</span>
+                  $39<span style={{ fontSize: '18px', fontWeight: 400 }}>/mo</span>
                 </p>
                 <p style={{ fontFamily: 'var(--font-dmsans)', fontSize: '12px', color: '#6B5B4E', marginTop: '8px' }}>
                   14-day free trial
@@ -174,7 +174,7 @@ export default function Home() {
               <ul style={{ fontFamily: 'var(--font-dmsans)', fontSize: '14px', color: '#1C1917', marginBottom: '32px', listStyle: 'none' }}>
                 <li style={{ marginBottom: '12px', paddingLeft: '24px', position: 'relative' }}>
                   <span style={{ position: 'absolute', left: 0 }}>✓</span>
-                  Everything in Basic
+                  Everything in Starter
                 </li>
                 <li style={{ marginBottom: '12px', paddingLeft: '24px', position: 'relative' }}>
                   <span style={{ position: 'absolute', left: 0 }}>✓</span>
@@ -190,7 +190,7 @@ export default function Home() {
                 </li>
               </ul>
 
-              <a href="https://buy.stripe.com/test_PLACEHOLDER_STANDARD" style={{
+              <a href="https://buy.stripe.com/test_PLACEHOLDER_STANDARD_NEW" style={{
                 display: 'block',
                 fontFamily: 'var(--font-dmsans)',
                 fontSize: '14px',
@@ -219,7 +219,7 @@ export default function Home() {
 
               <div style={{ background: '#FFFFFF', borderRadius: '8px', padding: '20px', marginBottom: '32px', textAlign: 'center' }}>
                 <p style={{ fontFamily: 'var(--font-playfair)', fontSize: '32px', fontWeight: 600, color: '#D97706', margin: 0 }}>
-                  $97<span style={{ fontSize: '18px', fontWeight: 400 }}>/mo</span>
+                  $99<span style={{ fontSize: '18px', fontWeight: 400 }}>/mo</span>
                 </p>
                 <p style={{ fontFamily: 'var(--font-dmsans)', fontSize: '12px', color: '#6B5B4E', marginTop: '8px' }}>
                   14-day free trial
@@ -249,7 +249,7 @@ export default function Home() {
                 </li>
               </ul>
 
-              <a href="https://buy.stripe.com/test_PLACEHOLDER_PRO" style={{
+              <a href="https://buy.stripe.com/test_PLACEHOLDER_PRO_NEW" style={{
                 display: 'block',
                 fontFamily: 'var(--font-dmsans)',
                 fontSize: '14px',

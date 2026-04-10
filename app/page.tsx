@@ -100,8 +100,13 @@ export default function SuitePage() {
           </div>
 
           {/* Standard */}
-          <div style={{ background: '#292524', borderRadius: '12px', padding: '32px', border: '1px solid #D97706' }}>
-            <p style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#D97706', marginBottom: '8px' }}>Most Popular</p>
+          <div style={{ background: '#292524', borderRadius: '12px', padding: '32px', border: '1px solid #D97706', position: 'relative' }}>
+            <div style={{
+              position: 'absolute', top: '-14px', left: '50%', transform: 'translateX(-50%)',
+              background: '#D97706', color: '#fff', fontSize: '11px', fontWeight: 700,
+              letterSpacing: '0.08em', textTransform: 'uppercase', padding: '4px 14px', borderRadius: '20px'
+            }}>Most Popular</div>
+            <p style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#D97706', marginBottom: '8px' }}>Standard</p>
             <p style={{ color: '#A8A29E', fontSize: '13px', marginBottom: '20px' }}>Daily ops + team communication</p>
             <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '48px', fontWeight: 700, marginBottom: '4px' }}>
               $39<span style={{ fontSize: '16px', color: '#A8A29E', fontFamily: 'DM Sans, sans-serif' }}>/mo</span>
@@ -110,7 +115,7 @@ export default function SuitePage() {
             {['Everything in Starter', 'Announcements', 'Shift Swaps', 'Read Receipts'].map(item => (
               <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '10px' }}>✓ {item}</p>
             ))}
-            <a href="https://buy.stripe.com/PLACEHOLDER_STANDARD" style={{
+            <a href="STRIPE_STANDARD_LINK_HERE" style={{
               display: 'block', textAlign: 'center', marginTop: '28px',
               background: '#D97706', padding: '12px', borderRadius: '8px',
               color: '#fff', textDecoration: 'none', fontSize: '15px', fontWeight: 600
@@ -128,13 +133,27 @@ export default function SuitePage() {
             {['Everything in Standard', 'LP Audits', 'Repair Tracking', 'Shift Handoffs', 'Daily Summaries'].map(item => (
               <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '10px' }}>✓ {item}</p>
             ))}
-            <a href="https://buy.stripe.com/PLACEHOLDER_PRO" style={{
+            <a href="STRIPE_PRO_LINK_HERE" style={{
               display: 'block', textAlign: 'center', marginTop: '28px',
               border: '1px solid #57534E', padding: '12px', borderRadius: '8px',
               color: '#F5F0E8', textDecoration: 'none', fontSize: '15px'
             }}>Start Free Trial</a>
           </div>
         </div>
+      </section>
+
+      {/* CTA */}
+      <section style={{ padding: '80px 24px', textAlign: 'center' }}>
+        <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '36px', fontWeight: 700, marginBottom: '16px' }}>
+          Ready to run a tighter operation?
+        </h2>
+        <p style={{ color: '#A8A29E', fontSize: '16px', marginBottom: '32px' }}>
+          Start your free trial. No credit card. Cancel anytime.
+        </p>
+        <a href="#pricing" style={{
+          background: '#D97706', color: '#fff', padding: '16px 36px',
+          borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '16px'
+        }}>See Plans</a>
       </section>
     </main>
   )

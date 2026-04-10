@@ -115,7 +115,7 @@ export default function SuitePage() {
             {['Everything in Starter', 'Announcements', 'Shift Swaps', 'Read Receipts'].map(item => (
               <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '10px' }}>✓ {item}</p>
             ))}
-            <a href="STRIPE_STANDARD_LINK_HERE" style={{
+            <a href="https://buy.stripe.com/7sY8wO1X3e7zgj58aJ9k409" style={{
               display: 'block', textAlign: 'center', marginTop: '28px',
               background: '#D97706', padding: '12px', borderRadius: '8px',
               color: '#fff', textDecoration: 'none', fontSize: '15px', fontWeight: 600
@@ -133,7 +133,7 @@ export default function SuitePage() {
             {['Everything in Standard', 'LP Audits', 'Repair Tracking', 'Shift Handoffs', 'Daily Summaries'].map(item => (
               <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '10px' }}>✓ {item}</p>
             ))}
-            <a href="STRIPE_PRO_LINK_HERE" style={{
+            <a href="https://buy.stripe.com/5kQ6oG1X3fbD7Mz3Ut9k408" style={{
               display: 'block', textAlign: 'center', marginTop: '28px',
               border: '1px solid #57534E', padding: '12px', borderRadius: '8px',
               color: '#F5F0E8', textDecoration: 'none', fontSize: '15px'
@@ -155,6 +155,19 @@ export default function SuitePage() {
           borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '16px'
         }}>See Plans</a>
       </section>
+
+      {/* Footer */}
+      <footer style={{
+        borderTop: '1px solid #292524', padding: '24px',
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        maxWidth: '768px', margin: '0 auto', flexWrap: 'wrap', gap: '12px'
+      }}>
+        <span style={{ color: '#78716C', fontSize: '13px' }}>Built for independent restaurants, by an independent restaurant owner.</span>
+        <div style={{ display: 'flex', gap: '24px' }}>
+          <a href="#pricing" style={{ color: '#78716C', fontSize: '13px', textDecoration: 'none' }}>Pricing</a>
+          <a href="mailto:support@wireach.tools" style={{ color: '#78716C', fontSize: '13px', textDecoration: 'none' }}>support@wireach.tools</a>
+        </div>
+      </footer>
     </main>
   )
 }

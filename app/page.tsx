@@ -92,7 +92,7 @@ export default function SuitePage() {
             {['Daily Ops Checklist', 'Photo Documentation', '30-day History'].map(item => (
               <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '10px' }}>✓ {item}</p>
             ))}
-            <a href="https://buy.stripe.com/28E5kC8lr0gJaYLcqZ9k403" target="_blank" rel="noopener noreferrer" style={{
+            <a href="https://buy.stripe.com/5kQbJ07hn7Jb3wjcqZ9k40c" target="_blank" rel="noopener noreferrer" style={{
               display: 'block', textAlign: 'center', marginTop: '28px',
               border: '1px solid #57534E', padding: '12px', borderRadius: '8px',
               color: '#F5F0E8', textDecoration: 'none', fontSize: '15px'

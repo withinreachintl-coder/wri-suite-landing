@@ -21,7 +21,7 @@ export default function SuitePage() {
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
           <a href="#pricing" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Pricing</a>
-          <a href="https://ops.wireach.tools" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Sign In</a>
+          <a href="#products" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Sign In</a>
         </div>
       </nav>
 
@@ -44,7 +44,7 @@ export default function SuitePage() {
       </section>
 
       {/* Products */}
-      <section style={{ padding: '80px 24px', maxWidth: '768px', margin: '0 auto' }}>
+      <section id="products" style={{ padding: '80px 24px', maxWidth: '768px', margin: '0 auto' }}>
         <p style={{ color: '#D97706', fontSize: '12px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '16px' }}>
           What's Included
         </p>
@@ -53,9 +53,9 @@ export default function SuitePage() {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px' }}>
           {[
-            { name: 'Daily Ops', url: 'https://ops.wireach.tools', desc: 'Opening and closing checklists with photo proof, timestamps, and staff sign-off.' },
-            { name: 'Staff Comms', url: 'https://staff.wireach.tools', desc: 'Announcements, shift swaps, and read receipts so your team stays on the same page.' },
-            { name: 'Restaurant Toolkit', url: 'https://toolkit.wireach.tools', desc: 'LP audits, R&M tracking, shift handoffs, and daily summaries for managers.' },
+            { name: 'Daily Ops', url: 'https://ops.wireach.tools', loginUrl: 'https://ops.wireach.tools/auth/login', desc: 'Opening and closing checklists with photo proof, timestamps, and staff sign-off.' },
+            { name: 'Staff Comms', url: 'https://staff.wireach.tools', loginUrl: 'https://staff.wireach.tools/auth/login', desc: 'Announcements, shift swaps, and read receipts so your team stays on the same page.' },
+            { name: 'Restaurant Toolkit', url: 'https://toolkit.wireach.tools', loginUrl: 'https://toolkit.wireach.tools/auth/login', desc: 'LP audits, R&M tracking, shift handoffs, and daily summaries for managers.' },
           ].map((p) => (
             <div key={p.name} style={{ background: '#292524', borderRadius: '12px', padding: '28px' }}>
               <div style={{
@@ -65,7 +65,10 @@ export default function SuitePage() {
               }}>✓</div>
               <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '18px', fontWeight: 600, marginBottom: '12px' }}>{p.name}</h3>
               <p style={{ color: '#A8A29E', fontSize: '14px', lineHeight: 1.6, marginBottom: '20px' }}>{p.desc}</p>
-              <a href={p.url} style={{ color: '#D97706', fontSize: '14px', textDecoration: 'none' }}>Learn more →</a>
+              <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+                <a href={p.url} style={{ color: '#D97706', fontSize: '14px', textDecoration: 'none' }}>Learn more →</a>
+                <a href={p.loginUrl} style={{ color: '#A8A29E', fontSize: '14px', textDecoration: 'none' }}>Sign In →</a>
+              </div>
             </div>
           ))}
         </div>

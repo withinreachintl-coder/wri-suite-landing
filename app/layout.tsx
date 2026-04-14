@@ -26,6 +26,16 @@ export default function RootLayout({
             padding: 0;
             box-sizing: border-box;
           }
+          .responsive-grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+          }
+          @media (max-width: 640px) {
+            .responsive-grid-3 {
+              grid-template-columns: 1fr;
+            }
+          }
           body {
             font-family: var(--font-dmsans);
             background: #FAFAF9;

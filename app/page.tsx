@@ -51,7 +51,7 @@ export default function SuitePage() {
         <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '36px', fontWeight: 700, marginBottom: '48px' }}>
           Three tools. One system.
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px' }}>
+        <div className="responsive-grid-3">
           {[
             { name: 'Daily Ops', url: 'https://ops.wireach.tools', desc: 'Opening and closing checklists with photo proof, timestamps, and staff sign-off.' },
             { name: 'Staff Comms', url: 'https://staff.wireach.tools', desc: 'Announcements, shift swaps, and read receipts so your team stays on the same page.' },
@@ -79,7 +79,7 @@ export default function SuitePage() {
         <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '36px', fontWeight: 700, marginBottom: '48px' }}>
           Choose your plan.
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px', alignItems: 'start' }}>
+        <div className="responsive-grid-3" style={{ alignItems: 'start' }}>
 
           {/* Starter */}
           <div style={{ background: '#292524', borderRadius: '12px', padding: '32px' }}>

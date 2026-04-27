@@ -62,12 +62,12 @@ const iconStyle: React.CSSProperties = {
 function ProductCard({ p }: { p: typeof row1Products[0] }) {
   return (
     <div style={cardStyle}>
-      <div style={iconStyle}>â</div>
+      <div style={iconStyle}>✓</div>
       <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '18px', fontWeight: 600, marginBottom: '12px' }}>{p.name}</h3>
       <p style={{ color: '#A8A29E', fontSize: '14px', lineHeight: 1.6, marginBottom: '20px' }}>{p.desc}</p>
       <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-        <a href={p.url} style={{ color: '#D97706', fontSize: '14px', textDecoration: 'none' }}>Learn more â</a>
-        <a href={p.loginUrl} style={{ color: '#A8A29E', fontSize: '14px', textDecoration: 'none' }}>Sign In â</a>
+        <a href={p.url} style={{ color: '#D97706', fontSize: '14px', textDecoration: 'none' }}>Learn more →</a>
+        <a href={p.loginUrl} style={{ color: '#A8A29E', fontSize: '14px', textDecoration: 'none' }}>Sign In →</a>
       </div>
     </div>
   );
@@ -89,7 +89,7 @@ export default function SuitePage() {
             width: '32px', height: '32px', background: '#D97706',
             borderRadius: '6px', display: 'flex', alignItems: 'center',
             justifyContent: 'center', fontSize: '16px', color: '#fff'
-          }}>â</div>
+          }}>✓</div>
           <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '18px', fontWeight: 700 }}>WRI Tools</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
@@ -111,7 +111,7 @@ export default function SuitePage() {
           <span style={{ color: '#D97706' }}>run like clockwork.</span>
         </h1>
         <p style={{ fontSize: '18px', color: '#A8A29E', lineHeight: 1.6, marginBottom: '40px', maxWidth: '560px' }}>
-          Daily ops checklists, staff communication, LP audits, repair tracking, tip pool calculations, and par counts â all under one roof, built for independent operators.
+          Daily ops checklists, staff communication, LP audits, repair tracking, tip pool calculations, and par counts — all under one roof, built for independent operators.
         </p>
         <a href="#pricing" style={{
           background: '#D97706', color: '#fff', padding: '14px 28px',
@@ -138,14 +138,14 @@ export default function SuitePage() {
           <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', marginTop: '24px' }}>
             {row2Products.map(p => (
               <div key={p.name} style={{ ...cardStyle, flex: '0 0 calc((100% - 48px) / 3)' }}>
-                <div style={iconStyle}>â</div>
+                <div style={iconStyle}>✓</div>
                 <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '18px', fontWeight: 600, marginBottom: '12px' }}>{p.name}</h3>
                 <p style={{ color: '#A8A29E', fontSize: '14px', lineHeight: 1.6, marginBottom: '20px' }}>{p.desc}</p>
                 <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
-                  <a href={p.url} style={{ color: '#D97706', fontSize: '14px', textDecoration: 'none' }}>Learn more â</a>
-                  <a href={p.loginUrl} style={{ color: '#A8A29E', fontSize: '14px', textDecoration: 'none' }}>Sign In â</a>
+                  <a href={p.url} style={{ color: '#D97706', fontSize: '14px', textDecoration: 'none' }}>Learn more →</a>
+                  <a href={p.loginUrl} style={{ color: '#A8A29E', fontSize: '14px', textDecoration: 'none' }}>Sign In →</a>
                   {p.stripeLink && (
-                    <a href={p.stripeLink} target="_blank" rel="noopener noreferrer" style={{ color: '#F5F0E8', fontSize: '14px', textDecoration: 'none' }}>Start Trial â</a>
+                    <a href={p.stripeLink} target="_blank" rel="noopener noreferrer" style={{ color: '#F5F0E8', fontSize: '14px', textDecoration: 'none' }}>Start Trial →</a>
                   )}
                 </div>
               </div>
@@ -173,7 +173,7 @@ export default function SuitePage() {
             </p>
             <p style={{ color: '#78716C', fontSize: '13px', marginBottom: '28px' }}>14-day free trial</p>
             {['Daily Ops Checklist', 'Photo Documentation', '30-day History'].map(item => (
-              <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '10px' }}>â {item}</p>
+              <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '10px' }}>✓ {item}</p>
             ))}
             <a href="https://buy.stripe.com/5kQbJ07hn7Jb3wjcqZ9k40c" style={{
               display: 'block', textAlign: 'center', marginTop: '28px',
@@ -196,7 +196,7 @@ export default function SuitePage() {
             </p>
             <p style={{ color: '#78716C', fontSize: '13px', marginBottom: '28px' }}>14-day free trial</p>
             {['Everything in Starter', 'Announcements', 'Shift Swaps', 'Read Receipts'].map(item => (
-              <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '10px' }}>â {item}</p>
+              <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '10px' }}>✓ {item}</p>
             ))}
             <a href="https://buy.stripe.com/7sY8wO1X3e7zgj58aJ9k409" style={{
               display: 'block', textAlign: 'center', marginTop: '28px',
@@ -214,7 +214,7 @@ export default function SuitePage() {
             </p>
             <p style={{ color: '#78716C', fontSize: '13px', marginBottom: '28px' }}>14-day free trial</p>
             {['Everything in Standard', 'LP Audits', 'Repair Tracking', 'Shift Handoffs', 'Daily Summaries'].map(item => (
-              <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '10px' }}>â {item}</p>
+              <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '10px' }}>✓ {item}</p>
             ))}
             <a href="https://buy.stripe.com/5kQ6oG1X3fbD7Mz3Ut9k408" style={{
               display: 'block', textAlign: 'center', marginTop: '28px',

@@ -93,15 +93,18 @@ export default function SuitePage() {
           <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '18px', fontWeight: 700 }}>WRI Tools</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+          <a href="https://ops.wireach.tools" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Daily Ops</a>
+          <a href="https://staff.wireach.tools" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Staff Comms</a>
+          <a href="https://toolkit.wireach.tools" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Toolkit</a>
           <a href="#pricing" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Pricing</a>
-          <a href="#products" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Sign In</a>
+          <a href="/signin" style={{ background: '#D97706', color: '#fff', padding: '8px 20px', borderRadius: '6px', textDecoration: 'none', fontSize: '15px', fontWeight: 600 }}>Sign In</a>
         </div>
       </nav>
 
       {/* Hero */}
       <section style={{ paddingTop: '160px', paddingBottom: '80px', paddingLeft: '24px', paddingRight: '24px', maxWidth: '768px', margin: '0 auto' }}>
         <p style={{ color: '#D97706', fontSize: '12px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '24px' }}>
-          For Independent Restaurants
+          For Independent Restaurants & Food Trucks
         </p>
         <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: '52px', lineHeight: 1.1, fontWeight: 700, marginBottom: '24px' }}>
           One suite. Every tool your restaurant needs to{' '}
@@ -157,7 +160,7 @@ export default function SuitePage() {
           Pricing
         </p>
         <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '36px', fontWeight: 700, marginBottom: '48px' }}>
-          Choose your plan.
+          Simple, honest pricing.
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px', alignItems: 'start' }}>
 

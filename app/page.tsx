@@ -1,7 +1,5 @@
 "use client";
 
-const showParTracker = process.env.NEXT_PUBLIC_SHOW_PAR_TRACKER === 'true';
-
 const row1Products = [
   {
     name: 'Daily Ops',
@@ -31,13 +29,13 @@ const row2Products = [
     desc: 'Run shift tip splits in seconds. FLSA-compliant payouts, no spreadsheets.',
     stripeLink: 'https://buy.stripe.com/4gM7sK59fd3vc2P9eN9k40e',
   },
-  ...(showParTracker ? [{
-    name: 'Par Tracker',
+  {
+    name: 'Par Level Tracker',
     url: 'https://par.wireach.tools',
     loginUrl: 'https://par.wireach.tools/login',
-    desc: 'Never run out again. Shift-based par counts with shortfall alerts.',
-    stripeLink: null as string | null,
-  }] : []),
+    desc: 'Daily par counts for every shift. Manager email alerts the moment stock falls below target.',
+    stripeLink: 'https://buy.stripe.com/cNieVcdFL0gJaYL1Ml9k40f',
+  },
 ];
 
 const cardStyle: React.CSSProperties = {
@@ -92,10 +90,11 @@ export default function SuitePage() {
           }}>✓</div>
           <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '18px', fontWeight: 700 }}>WRI Tools</span>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <a href="https://ops.wireach.tools" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Daily Ops</a>
           <a href="https://staff.wireach.tools" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Staff Comms</a>
           <a href="https://toolkit.wireach.tools" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Toolkit</a>
+          <a href="https://par.wireach.tools" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Par Tracker</a>
           <a href="#pricing" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Pricing</a>
           <a href="/signin" style={{ background: '#D97706', color: '#fff', padding: '8px 20px', borderRadius: '6px', textDecoration: 'none', fontSize: '15px', fontWeight: 600 }}>Sign In</a>
         </div>
@@ -135,7 +134,7 @@ export default function SuitePage() {
 
         {/* Row 2: up to 2 cards, centered */}
         {row2Products.length > 0 && (
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', marginTop: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px', marginTop: '24px' }}>
             {row2Products.map(p => (
               <div key={p.name} style={{ ...cardStyle, flex: '0 0 calc((100% - 48px) / 3)' }}>
                 <div style={iconStyle}>✓</div>
@@ -213,7 +212,7 @@ export default function SuitePage() {
               $99<span style={{ fontSize: '16px', color: '#A8A29E', fontFamily: 'DM Sans, sans-serif' }}>/mo</span>
             </p>
             <p style={{ color: '#78716C', fontSize: '13px', marginBottom: '28px' }}>14-day free trial</p>
-            {['Everything in Standard', 'LP Audits', 'Repair Tracking', 'Shift Handoffs', 'Daily Summaries'].map(item => (
+            {['Everything in Standard', 'LP Audits', 'Repair Tracking', 'Shift Handoffs', 'Daily Summaries', 'Par Level Tracker'].map(item => (
               <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '10px' }}>✓ {item}</p>
             ))}
             <a href="https://buy.stripe.com/5kQ6oG1X3fbD7Mz3Ut9k408" style={{

@@ -40,6 +40,7 @@
 | Date | PR | Commit | Scope |
 |------|-----|--------|-------|
 | 2026-04-30 | PR #3 | 7f4670c | Par Level Tracker card + nav link + Pro tier pricing. Removes `showParTracker` env flag (card was hidden on prod). Name corrected Par Tracker → Par Level Tracker. Stripe link wired. row2 flex→auto-fit grid for mobile reflow. Nav gap 24→16px to fit 6 items. Par Level Tracker added to Pro tier features only. Screenshots verified by Keon at preview before merge. Production deployed 18:40 UTC. |
+| 2026-04-30 | PR #4 | b647b81 | Add Par Level Tracker card to `/signin` product picker (4th card → `par.wireach.tools/login`). Existing `/signin` (shipped via `71fbb7b` in SPEC-0009 sweep) predated Par Tracker launch and was missing its login entry point. Grid `repeat(3, 1fr)` → `repeat(auto-fit, minmax(200px, 1fr))`; container `maxWidth: 768px` → `1000px` for 4-card responsive layout. Out of scope: heading/subhead copy, existing 3 cards' content, footer link, layout chrome — all preserved. Verified on preview by Keon before merge. Reference: SPEC-0010 follow-up. |
 
 ---
 

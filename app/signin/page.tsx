@@ -9,11 +9,12 @@ export default function SignInPage() {
         <p style={{ color: '#A8A29E', fontSize: '16px' }}>Choose the tool you want to access.</p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', maxWidth: '768px', width: '100%' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px', maxWidth: '1000px', width: '100%' }}>
         {[
           { name: 'Daily Ops', desc: 'Opening & closing checklists', url: 'https://ops.wireach.tools/auth/login' },
           { name: 'Staff Comms', desc: 'Announcements & shift swaps', url: 'https://staff.wireach.tools/login' },
           { name: 'Toolkit', desc: 'LP audits, R&M, shift handoffs', url: 'https://toolkit.wireach.tools/login' },
+          { name: 'Par Level Tracker', desc: 'Daily par counts and shortfall alerts', url: 'https://par.wireach.tools/login' },
         ].map(p => (
           <a
             key={p.name}

@@ -1,8 +1,21 @@
 import type { Metadata } from 'next'
 
+const siteTitle = 'Restaurant Operations Software for Independents | WRI Suite';
+const siteDescription = 'All-in-one operations software for independent restaurants. Daily checklists, tip pool calculator, par tracker, staff comms. Start a 14-day free trial.';
+
 export const metadata: Metadata = {
-  title: 'WRI Suite - Restaurant Operations Platform',
-  description: 'Daily Ops, Staff Communications, and Restaurant Toolkit. Everything restaurant managers need.',
+  title: siteTitle,
+  description: siteDescription,
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
+  },
 }
 
 export default function RootLayout({

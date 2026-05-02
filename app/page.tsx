@@ -44,6 +44,16 @@ const cardStyle: React.CSSProperties = {
   padding: '28px',
 };
 
+const footerLinkStyle: React.CSSProperties = {
+  color: '#78716C',
+  fontSize: '13px',
+  textDecoration: 'none',
+  display: 'inline-flex',
+  alignItems: 'center',
+  minHeight: '44px',
+  padding: '0 4px',
+};
+
 const iconStyle: React.CSSProperties = {
   width: '40px',
   height: '40px',
@@ -112,10 +122,92 @@ export default function SuitePage() {
         <p style={{ fontSize: '18px', color: '#A8A29E', lineHeight: 1.6, marginBottom: '40px', maxWidth: '560px' }}>
           Daily ops checklists, staff communication, LP audits, repair tracking, tip pool calculations, and par counts — all under one roof, built for independent operators.
         </p>
+
+        {/* Demo video slot — 16:9 responsive */}
+        {/* TODO(loom): replace empty src with the Loom embed URL when ready. */}
+        <div style={{
+          width: '100%',
+          maxWidth: '720px',
+          margin: '0 auto 40px',
+          aspectRatio: '16 / 9',
+          background: '#292524',
+          border: '1px solid #3D3832',
+          borderRadius: '12px',
+          position: 'relative',
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+          <iframe
+            src=""
+            data-loom-pending="true"
+            title="WRI Suite product demo"
+            allowFullScreen
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0, background: 'transparent', visibility: 'hidden' }}
+          />
+          {/* Placeholder cover — remove this div (or set the iframe's visibility back to 'visible') once the Loom URL is in. */}
+          <div style={{
+            position: 'absolute', inset: 0, background: '#292524',
+            display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+            textAlign: 'center', pointerEvents: 'none',
+          }}>
+            <div style={{
+              width: '56px', height: '56px', marginBottom: '12px',
+              borderRadius: '50%', background: '#D97706',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              color: '#fff', fontSize: '20px',
+            }}>▶</div>
+            <p style={{ color: '#F5F0E8', fontSize: '14px', fontWeight: 600 }}>Demo video coming</p>
+          </div>
+        </div>
+
         <a href="#pricing" style={{
+          display: 'inline-block',
           background: '#D97706', color: '#fff', padding: '14px 28px',
-          borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '16px'
+          borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '16px',
+          minHeight: '44px',
         }}>See Plans</a>
+      </section>
+
+      {/* Testimonials */}
+      <section id="testimonials" style={{ padding: '80px 24px', maxWidth: '768px', margin: '0 auto' }}>
+        <p style={{ color: '#D97706', fontSize: '12px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '16px' }}>
+          Social Proof
+        </p>
+        <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '36px', fontWeight: 700, marginBottom: '48px' }}>
+          What restaurant operators are saying
+        </h2>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+          <div style={{
+            background: '#FAFAF9',
+            color: '#1C1917',
+            borderRadius: '12px',
+            padding: '32px',
+          }}>
+            <div style={{
+              width: '64px', height: '64px', borderRadius: '50%',
+              background: '#E7E5E4', color: '#1C1917',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontFamily: 'Playfair Display, serif', fontSize: '22px', fontWeight: 700,
+              marginBottom: '20px',
+            }} aria-hidden="true">★</div>
+            <p style={{
+              fontFamily: 'Playfair Display, serif',
+              fontStyle: 'italic',
+              fontSize: '20px',
+              lineHeight: 1.5,
+              color: '#1C1917',
+              marginBottom: '20px',
+            }}>
+              &ldquo;Placeholder testimonial copy — will be updated with the real quote from Guthrie&rsquo;s.&rdquo;
+            </p>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '14px', color: '#1C1917', fontWeight: 500 }}>
+              [Name] · [Role] · [Restaurant] · [City]
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Products */}
@@ -241,14 +333,23 @@ export default function SuitePage() {
       {/* Footer */}
       <footer style={{
         borderTop: '1px solid #292524', padding: '24px',
-        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-        maxWidth: '768px', margin: '0 auto', flexWrap: 'wrap', gap: '12px'
+        maxWidth: '768px', margin: '0 auto',
       }}>
-        <span style={{ color: '#78716C', fontSize: '13px' }}>Built for independent restaurants, by an independent restaurant owner.</span>
-        <div style={{ display: 'flex', gap: '24px' }}>
-          <a href="#pricing" style={{ color: '#78716C', fontSize: '13px', textDecoration: 'none' }}>Pricing</a>
-          <a href="mailto:support@wireach.tools" style={{ color: '#78716C', fontSize: '13px', textDecoration: 'none' }}>support@wireach.tools</a>
+        <div style={{
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          flexWrap: 'wrap', gap: '12px',
+        }}>
+          <span style={{ color: '#78716C', fontSize: '13px' }}>Built for independent restaurants, by an independent restaurant owner.</span>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 16px', alignItems: 'center' }}>
+            <a href="#pricing" style={footerLinkStyle}>Pricing</a>
+            <a href="/privacy" style={footerLinkStyle}>Privacy</a>
+            <a href="/terms" style={footerLinkStyle}>Terms</a>
+            <a href="mailto:support@wireach.tools" style={footerLinkStyle}>Contact</a>
+          </div>
         </div>
+        <p style={{ marginTop: '16px', color: '#78716C', fontSize: '12px' }}>
+          Within Reach International LLC · Memphis, TN
+        </p>
       </footer>
     </main>
   )

@@ -344,8 +344,7 @@ export default function SuitePage() {
             <a href="#pricing" style={footerLinkStyle}>Pricing</a>
             <a href="/privacy" style={footerLinkStyle}>Privacy</a>
             <a href="/terms" style={footerLinkStyle}>Terms</a>
-            <a href="mailto:withinreachintl@gmail.com" style={footerLinkStyle}>Contact</a>
-            <a href="mailto:support@wireach.tools" style={footerLinkStyle}>support@wireach.tools</a>
+            <a href="mailto:support@wireach.tools" style={footerLinkStyle}>Contact</a>
           </div>
         </div>
         <p style={{ marginTop: '16px', color: '#78716C', fontSize: '12px' }}>

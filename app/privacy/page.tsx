@@ -67,7 +67,7 @@ export default function PrivacyPage() {
         <section style={{ marginBottom: '32px' }}>
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '22px', fontWeight: 600, marginBottom: '12px' }}>6. Contact</h2>
           <p style={{ color: '#F5F0E8', fontSize: '15px', lineHeight: 1.7 }}>
-            Questions about this policy: <a href="mailto:withinreachintl@gmail.com" style={{ color: '#D97706', textDecoration: 'none' }}>withinreachintl@gmail.com</a>.
+            Questions about this policy: <a href="mailto:support@wireach.tools" style={{ color: '#D97706', textDecoration: 'none' }}>support@wireach.tools</a>.
           </p>
         </section>
 

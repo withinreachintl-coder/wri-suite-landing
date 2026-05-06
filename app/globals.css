@@ -1,0 +1,71 @@
+/* Global a11y + mobile rules.
+   Tokens (#D97706 amber, 600px breakpoint) match CLAUDE.md design tokens.
+   Inline styles remain the primary pattern; this file is scoped to:
+     - keyboard focus visibility (WCAG 2.4.7)
+     - mobile nav collapse <600px (CSS-driven, paired with React useState toggle in app/page.tsx)
+*/
+
+:focus-visible {
+  outline: 2px solid #D97706;
+  outline-offset: 2px;
+}
+
+/* Nav: desktop default, hamburger below 600px. */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 599px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(28, 25, 23, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 8px 16px 16px;
+    border-top: 1px solid #292524;
+  }
+
+  .nav-links.open a {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+  }
+
+  .nav-links.open a[data-cta="true"] {
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .nav-mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    color: #F5F0E8;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+  }
+}

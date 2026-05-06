@@ -1,5 +1,9 @@
 "use client";
 
+import { useEffect, useState } from 'react';
+
+const LOOM_URL = '';
+
 const row1Products = [
   {
     name: 'Daily Ops',
@@ -82,11 +86,30 @@ function ProductCard({ p }: { p: typeof row1Products[0] }) {
 }
 
 export default function SuitePage() {
+  const [navOpen, setNavOpen] = useState(false);
+
+  useEffect(() => {
+    if (!navOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setNavOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [navOpen]);
+
+  const closeNav = () => setNavOpen(false);
+  const navLinkStyle: React.CSSProperties = { color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' };
+  const navCtaStyle: React.CSSProperties = {
+    background: '#D97706', color: '#fff', padding: '12px 20px', borderRadius: '6px',
+    textDecoration: 'none', fontSize: '15px', fontWeight: 600, minHeight: '44px',
+    display: 'inline-flex', alignItems: 'center',
+  };
+
   return (
     <main style={{ background: '#1C1917', color: '#F5F0E8', fontFamily: 'DM Sans, sans-serif' }}>
 
       {/* Nav */}
-      <nav style={{
+      <nav aria-label="Primary" style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
         background: 'rgba(28,25,23,0.95)', backdropFilter: 'blur(10px)',
         height: '64px', display: 'flex', alignItems: 'center',
@@ -97,16 +120,26 @@ export default function SuitePage() {
             width: '32px', height: '32px', background: '#D97706',
             borderRadius: '6px', display: 'flex', alignItems: 'center',
             justifyContent: 'center', fontSize: '16px', color: '#fff'
-          }}>✓</div>
+          }} aria-hidden="true">✓</div>
           <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '18px', fontWeight: 700 }}>WRI Tools</span>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-          <a href="https://ops.wireach.tools" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Daily Ops</a>
-          <a href="https://staff.wireach.tools" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Staff Comms</a>
-          <a href="https://toolkit.wireach.tools" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Toolkit</a>
-          <a href="https://par.wireach.tools" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Par Tracker</a>
-          <a href="#pricing" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>Pricing</a>
-          <a href="/signin" style={{ background: '#D97706', color: '#fff', padding: '8px 20px', borderRadius: '6px', textDecoration: 'none', fontSize: '15px', fontWeight: 600 }}>Sign In</a>
+        <button
+          type="button"
+          className="nav-mobile-toggle"
+          aria-label={navOpen ? 'Close navigation' : 'Open navigation'}
+          aria-expanded={navOpen}
+          aria-controls="primary-nav-links"
+          onClick={() => setNavOpen(o => !o)}
+        >
+          {navOpen ? '✕' : '☰'}
+        </button>
+        <div id="primary-nav-links" className={`nav-links${navOpen ? ' open' : ''}`}>
+          <a href="https://ops.wireach.tools" style={navLinkStyle} onClick={closeNav}>Daily Ops</a>
+          <a href="https://staff.wireach.tools" style={navLinkStyle} onClick={closeNav}>Staff Comms</a>
+          <a href="https://toolkit.wireach.tools" style={navLinkStyle} onClick={closeNav}>Toolkit</a>
+          <a href="https://par.wireach.tools" style={navLinkStyle} onClick={closeNav}>Par Tracker</a>
+          <a href="#pricing" style={navLinkStyle} onClick={closeNav}>Pricing</a>
+          <a href="/signin" data-cta="true" style={navCtaStyle} onClick={closeNav}>Sign In</a>
         </div>
       </nav>
 
@@ -139,14 +172,15 @@ export default function SuitePage() {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-          <iframe
-            src=""
-            data-loom-pending="true"
-            title="WRI Suite product demo"
-            allowFullScreen
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0, background: 'transparent', visibility: 'hidden' }}
-          />
-          {/* Placeholder cover — remove this div (or set the iframe's visibility back to 'visible') once the Loom URL is in. */}
+          {LOOM_URL && (
+            <iframe
+              src={LOOM_URL}
+              title="WRI Suite product demo"
+              allowFullScreen
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0, background: 'transparent' }}
+            />
+          )}
+          {/* Placeholder cover — remove once LOOM_URL is set above. */}
           <div style={{
             position: 'absolute', inset: 0, background: '#292524',
             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
@@ -220,7 +254,7 @@ export default function SuitePage() {
         </h2>
 
         {/* Row 1: 3 cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
           {row1Products.map(p => <ProductCard key={p.name} p={p} />)}
         </div>
 
@@ -253,7 +287,7 @@ export default function SuitePage() {
         <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '36px', fontWeight: 700, marginBottom: '48px' }}>
           Simple, honest pricing.
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px', alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px', alignItems: 'start' }}>
 
           {/* Starter */}
           <div style={{ background: '#292524', borderRadius: '12px', padding: '32px' }}>
